@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	       http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		 http://www.springframework.org/schema/context/spring-context.xsd">
+		
+<bean id="bookBean" class="com.training.model.Book" lazy-init="true">
+
+<property name="bookId" value="101"></property>
+<property name="bookName" value="headFirst"></property>
+<property name="price" value="400.0"></property>
+<property name="author" ref="authorSuresh"></property>
+
+</bean>
+
+<bean id="authorBean" class="com.training.model.Author">
+
+<property name="authorId" value="201"></property>
+<property name="authorName" value="Ram"></property>
+<property name="authorAge" value="34"></property>
+
+</bean>
+
+<bean id="authorRamesh" class="com.training.model.Author">
+
+<property name="authorId" value="202"></property>
+<property name="authorName" value="Ramesh"></property>
+<property name="authorAge" value="19"></property>
+
+</bean>
+
+<bean id="authorSuresh" class="com.training.model.Author">
+
+<property name="authorId" value="203"></property>
+<property name="authorName" value="Suresh"></property>
+<property name="authorAge" value="20"></property>
+
+</bean>
+
+<bean id="authorMangesh" class="com.training.model.Author">
+
+<constructor-arg name="authorId" value="301"></constructor-arg>
+<constructor-arg name="authorName" value="Mangesh"></constructor-arg>
+<constructor-arg name="authorAge" value="12"></constructor-arg>
+
+</bean>
+		 
+</beans>
